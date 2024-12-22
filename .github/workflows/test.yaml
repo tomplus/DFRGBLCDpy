@@ -29,6 +29,6 @@ jobs:
 
     - name: Check formating, typing etc.
       run: |
-        ruff format
+        ruff format --diff
         ruff check
         mypy --strict dfrgblcdpy 
