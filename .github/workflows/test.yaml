@@ -27,7 +27,7 @@ jobs:
         python -V
         pip freeze
 
-    - name: Check formating, typing etc.
+    - name: Check formatting, typing etc.
       run: |
         ruff format --diff
         ruff check
