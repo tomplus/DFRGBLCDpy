@@ -35,4 +35,5 @@ jobs:
 
     - name: Build package
       run: |
+        pip install setuptools
         python setup.py build sdist
