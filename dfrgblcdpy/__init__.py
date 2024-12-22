@@ -229,6 +229,7 @@ class DFRRGBLCDPY:
         self._show_mode &= ~self.LCD_ENTRYLEFT
         self._command(self.LCD_ENTRYMODESET | self._show_mode)
 
+
     def no_autoscroll(self) -> None:
         """
         Disables autoscroll mode
