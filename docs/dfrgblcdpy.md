@@ -22,7 +22,8 @@ def __init__(i2c_line: int = 1,
              rgb_addr: int = 0x2D,
              lcd_addr: int = 0x3E,
              col: int = 16,
-             row: int = 2) -> None
+             row: int = 2,
+             bus: Any | None = None) -> None
 ```
 
 Creates an instance of the class.
@@ -34,6 +35,7 @@ Creates an instance of the class.
 - `lcd_addr`: ic2 address of LCD
 - `col`: number of cols
 - `row`: number of rows
+- `bus`: smbus.SMBus or compatible, None means to create one for `i2c_line`
 
 <a id="dfrgblcdpy.DFRRGBLCDPY.write"></a>
 
