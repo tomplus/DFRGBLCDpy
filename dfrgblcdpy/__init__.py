@@ -69,6 +69,7 @@ class DFRRGBLCDPY:
         lcd_addr: int = 0x3E,
         col: int = 16,
         row: int = 2,
+        bus: Any | None = None,
     ) -> None:
         """
         Creates an instance of the class.
@@ -78,6 +79,7 @@ class DFRRGBLCDPY:
         :param lcd_addr: ic2 address of LCD
         :param col: number of cols
         :param row: number of rows
+        :param bus: smbus.SMBus or compatible, None means to create one for `i2c_line`
         """
 
         self.rgb_addr = rgb_addr
@@ -89,7 +91,10 @@ class DFRRGBLCDPY:
             self._show_function |= self.LCD_2LINE
         self._show_control = self.LCD_DISPLAYOFF
         self._show_mode = self.LCD_ENTRYLEFT | self.LCD_ENTRYSHIFTDECREMENT
-        self.bus = smbus.SMBus(i2c_line)
+        if bus:
+            self.bus = bus
+        else:
+            self.bus = smbus.SMBus(i2c_line)
         self._init_device()
 
     def write(self, data: int) -> None:

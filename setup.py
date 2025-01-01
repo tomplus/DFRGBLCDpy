@@ -8,7 +8,7 @@ with open("test-requirements.txt") as f:
 
 setup(
     name="dfrgblcdpy",
-    version="0.1.2",
+    version="0.2.0",
     description="Python library to control DFRobot Gravity I2C LCD1602 with RGB Backlight Display",
     author_email="tomasz.prus@gmail.com",
     author="Tomasz Prus",
